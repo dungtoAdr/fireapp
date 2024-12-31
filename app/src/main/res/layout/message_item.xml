@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <!-- Tin nhắn bên trái -->
+    <TextView
+        android:id="@+id/leftMessageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/message_background_other"
+        android:padding="10dp"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+
+    <!-- Tin nhắn bên phải -->
+    <TextView
+        android:id="@+id/rightMessageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:background="@drawable/message_background_user"
+        android:padding="10dp"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+
+</LinearLayout>

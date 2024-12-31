@@ -1,0 +1,87 @@
+{
+  "project_info": {
+    "project_number": "613254671357",
+    "firebase_url": "https://zolaapp-2895a-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "zolaapp-2895a",
+    "storage_bucket": "zolaapp-2895a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613254671357:android:0460d08254df18c1948794",
+        "android_client_info": {
+          "package_name": "com.example.crud_stu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC33I7CUJ-IpDcezgkpTXkFhZWva-mAhvI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613254671357:android:29d525e5bbe2a59d948794",
+        "android_client_info": {
+          "package_name": "com.example.fireapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC33I7CUJ-IpDcezgkpTXkFhZWva-mAhvI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613254671357:android:907b9dbc2bbe8a78948794",
+        "android_client_info": {
+          "package_name": "com.example.zolaapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC33I7CUJ-IpDcezgkpTXkFhZWva-mAhvI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613254671357:android:045137204a7896be948794",
+        "android_client_info": {
+          "package_name": "com.vt.readnoti2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC33I7CUJ-IpDcezgkpTXkFhZWva-mAhvI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
