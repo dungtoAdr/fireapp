@@ -10,8 +10,8 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/common_google_signin_btn_icon_light"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/common_google_signin_btn_icon_light" />
 
     <!-- Title -->
     <TextView
@@ -20,10 +20,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/logo"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
         android:text="Create Account"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="30dp" />
+        android:textStyle="bold" />
 
     <!-- Full Name -->
     <EditText
@@ -31,12 +31,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/registerTitle"
-        android:hint="Full Name"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/edittext_background"
+        android:hint="Full Name"
         android:padding="12dp"
         android:textColor="#000"
-        android:textColorHint="#888"
-        android:layout_marginBottom="15dp" />
+        android:textColorHint="#888" />
 
     <!-- Email -->
     <EditText
@@ -44,13 +44,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/fullName"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/edittext_background"
         android:hint="Email Address"
         android:inputType="textEmailAddress"
-        android:background="@drawable/edittext_background"
         android:padding="12dp"
         android:textColor="#000"
-        android:textColorHint="#888"
-        android:layout_marginBottom="15dp" />
+        android:textColorHint="#888" />
 
     <!-- Password -->
     <EditText
@@ -58,36 +58,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/email"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/edittext_background"
         android:hint="Password"
         android:inputType="textPassword"
-        android:background="@drawable/edittext_background"
         android:padding="12dp"
         android:textColor="#000"
-        android:textColorHint="#888"
-        android:layout_marginBottom="25dp" />
+        android:textColorHint="#888" />
+
     <EditText
         android:id="@+id/re_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/password"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/edittext_background"
         android:hint="Re Password"
         android:inputType="textPassword"
-        android:background="@drawable/edittext_background"
         android:padding="12dp"
         android:textColor="#000"
-        android:textColorHint="#888"
-        android:layout_marginBottom="25dp" />
+        android:textColorHint="#888" />
     <!-- Register Button -->
     <Button
         android:id="@+id/registerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/re_password"
+        android:layout_marginBottom="15dp"
         android:backgroundTint="@color/purple_500"
         android:text="Sign Up"
         android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:layout_marginBottom="15dp" />
+        android:textSize="16sp" />
 
     <!-- Already have an account -->
     <TextView
@@ -96,8 +97,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/registerButton"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
         android:text="Already have an account? Login"
-        android:textSize="14sp"
-        android:layout_marginTop="10dp" />
+        android:textSize="14sp" />
 
 </RelativeLayout>

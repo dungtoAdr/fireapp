@@ -47,7 +47,7 @@ import java.security.NoSuchAlgorithmException;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText et_email, et_password;
-    private TextView tv_register, tv_phone;
+    private TextView tv_register, tv_phone, tv_forget;
     private Button btn_login;
     private GoogleSignInClient googleSignInClient;
     private static final int RC_SIGN_IN = 100;
@@ -60,12 +60,17 @@ public class LoginActivity extends AppCompatActivity {
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this.getApplication());
         setContentView(R.layout.activity_login);
-
         et_email = findViewById(R.id.et_email);
         et_password = findViewById(R.id.et_password);
         btn_login = findViewById(R.id.btn_login);
         tv_register = findViewById(R.id.tv_register);
         tv_phone = findViewById(R.id.tv_phone);
+        tv_forget = findViewById(R.id.tv_forget);
+        tv_forget.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), ForgetActivity.class);
+            startActivity(intent);
+            finish();
+        });
 
         tv_phone.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,13 +135,17 @@ public class LoginActivity extends AppCompatActivity {
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
                             FirebaseUser user = firebaseAuth.getCurrentUser();
-                            String email1 = user.getEmail();
-                            Toast.makeText(getApplicationContext(), "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                            intent.putExtra("name", "abc");
-                            intent.putExtra("email", email1);
-                            startActivity(intent);
-                            finish();
+                            if (user.isEmailVerified()) {
+                                String email1 = user.getEmail();
+                                Toast.makeText(getApplicationContext(), "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                intent.putExtra("name", "abc");
+                                intent.putExtra("email", email1);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Email chưa được xác thực", Toast.LENGTH_SHORT).show();
+                            }
                         } else {
                             Toast.makeText(getApplicationContext(), "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
                         }

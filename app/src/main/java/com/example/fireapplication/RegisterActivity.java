@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class RegisterActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private EditText emailField, passwordField,repass,fullname;
+    private EditText emailField, passwordField, repass, fullname;
     private Button registerButton;
 
     @Override
@@ -42,9 +42,9 @@ public class RegisterActivity extends AppCompatActivity {
             String name = fullname.getText().toString().trim();
 
             if (!email.isEmpty() && !password.isEmpty() && !re_password.isEmpty() && !name.isEmpty()) {
-                if(password.equals(re_password)){
+                if (password.equals(re_password)) {
                     registerUser(email, password);
-                }else{
+                } else {
                     Toast.makeText(this, "RePass and Pass don't match", Toast.LENGTH_SHORT).show();
                 }
             } else {
@@ -58,11 +58,18 @@ public class RegisterActivity extends AppCompatActivity {
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         FirebaseUser user = mAuth.getCurrentUser();
-                        Log.d("FirebaseAuth", "User created successfully: " + user.getEmail());
-                        Toast.makeText(getApplicationContext(), "Registration successful", Toast.LENGTH_SHORT).show();
-                        Intent intent=new Intent(getApplicationContext(), LoginActivity.class);
-                        startActivity(intent);
-                        finish();
+                        if (user != null) {
+                            user.sendEmailVerification()
+                                    .addOnCompleteListener(verificationTask -> {
+                                        if (verificationTask.isSuccessful()) {
+                                            Intent intent = new Intent(getApplicationContext(), VerifyEmailActivity.class);
+                                            startActivity(intent);
+                                            finish();
+                                        } else {
+                                            Toast.makeText(getApplicationContext(), "Lỗi khi gửi email xác nhận!", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                        }
                     } else {
                         Log.e("FirebaseAuth", "Error: " + task.getException().getMessage());
                         Toast.makeText(getApplicationContext(), "Registration failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
